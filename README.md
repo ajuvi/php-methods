@@ -3,7 +3,7 @@
 Exemple d'un servidor i d'un client REST per a realitzar càlculs matemàtics.
 * El servidor REST és l'script rest.php.
 * Els clients REST són els fitxers run.php i run2.php. 
-* Els clients RES
+* Els clients REST utilitzen l'aplicació cURL per a fer consultes per GET, POST, PUT i DELETE.
 
 Per a cada mètode del protocol HTTP en realitza una funció matemàtica diferent.
 ```

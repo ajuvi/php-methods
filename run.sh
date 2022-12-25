@@ -21,6 +21,9 @@ elif [ "$metode" = "DELETE" ]; then
              -H "Content-Type: application/json" \
              -d '{"num1": "2", "num2": "8"}'
 
+else
+	echo "ERROR: Has d'escriure GET, POST, PUT o DELETE."
+
 fi
 
 

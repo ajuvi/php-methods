@@ -1,29 +1,31 @@
 #!/bin/bash
 
-read -p "Entra un dels mètodes per enviar la informació (GET,POST,PUT,DELETE): " metode
+read -p "Entra una operació (+,-,*,/): " operacio
 
 
-if [ "$metode" = "GET" ]; then
-	curl "http://localhost/php-methods/rest.php?num1=2&num2=5"
+if [ "$operacio" = "+" ]; then
+	#envia a través del mètode HTTP GET
+	curl "http://localhost/php-methods/rest.php?num1=80&num2=5"
 
-elif [ "$metode" = "POST" ]; then
+elif [ "$operacio" = "-" ]; then
+	#envia a través del mètode HTTP POST
 	curl -X POST http://localhost/php-methods/rest.php \
 	     -H "Content-Type: application/json" \
-	     -d '{"num1": "2", "num2": "6"}'
+	     -d '{"num1": "80", "num2": "5"}'
 
-elif [ "$metode" = "PUT" ]; then
+elif [ "$operacio" = "*" ]; then
+	#envia a través del mètode HTTP PUT
         curl -X PUT http://localhost/php-methods/rest.php \
              -H "Content-Type: application/json" \
-             -d '{"num1": "2", "num2": "7"}'
+             -d '{"num1": "80", "num2": "5"}'
 
-elif [ "$metode" = "DELETE" ]; then
+elif [ "$operacio" = "/" ]; then
+	#envia a través del mètode HTTP DELETE
         curl -X DELETE http://localhost/php-methods/rest.php \
              -H "Content-Type: application/json" \
-             -d '{"num1": "2", "num2": "8"}'
+             -d '{"num1": "80", "num2": "5"}'
 
 else
-	echo "ERROR: Has d'escriure GET, POST, PUT o DELETE."
+	echo "ERROR: Has d'escriure una operació vàlida."
 
 fi
-
-

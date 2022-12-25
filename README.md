@@ -1,8 +1,26 @@
 # rest-calculator
-Exemple d'ús dels mètodes (GET, POST, PUT, DELETE).
-Per a cada mètode en realitza una funció matemàtica diferent.
 
+Exemple d'un servidor i d'un client REST per a realitzar càlculs matemàtics.
+* El servidor REST és l'script rest.php.
+* Els clients REST són els fitxers run.php i run2.php. 
+* Els clients RES
+
+Per a cada mètode del protocol HTTP en realitza una funció matemàtica diferent.
+```
 GET -> Suma
 POST -> Resta
 PUT -> Multiplicació
 DELETE -> Resta
+```
+
+## Executar el servidor
+
+Executa **run.sh** per a realitzar els càlculs amb dos números prefefinits.
+```
+bash run.sh
+```
+
+Executa **run2.sh** per a realitzar els càlculs de dos números entrats per teclat.
+```
+bash run2.sh
+```

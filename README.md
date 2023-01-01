@@ -13,6 +13,10 @@ PUT -> Multiplicació
 DELETE -> Resta
 ```
 
+## Instal·lar
+
+Clona el projecte en un servidor web. Per exemple a la ruta /var/www/html de Apache2 o en la capeta htdocs del Xampp.
+
 ## Executar el servidor
 
 Executa **run.sh** per a realitzar els càlculs amb dos números prefefinits.

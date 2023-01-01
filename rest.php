@@ -20,27 +20,25 @@ if($method=='GET'){
     $result = $num1+$num2;
     $operation = "plus";
 
-} else if($method=="POST"){
+} else {
     $data=getArrayContent();
     $num1=$data['num1'];
-    $num2=$data['num2'];
-    $result = $num1-$num2;
-    $operation = "minus";
-
-} else if($method=="PUT"){
-    $data=getArrayContent();
-    $num1=$data['num1'];
-    $num2=$data['num2'];
-    $result = $num1*$num2;
-    $operation = "times";
-
-} else if($method=="DELETE"){
-    $data=getArrayContent();
-    $num1=$data['num1'];
-    $num2=$data['num2'];
-    $result = $num1/$num2;
-    $operation = "obelus";
+    $num2=$data['num2'];   
+    
+    if($method=="POST"){
+        $result = $num1-$num2;
+        $operation = "minus";
+    } else if($method=="PUT"){
+        $result = $num1*$num2;
+        $operation = "times";
+    
+    } else if($method=="DELETE"){
+        $result = $num1/$num2;
+        $operation = "obelus";
+    }    
 }
+
+
 
 echo json_encode(
 	array("method"=>"$method",

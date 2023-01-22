@@ -29,7 +29,7 @@ if($method=='GET'){
 if($method=="GET"){
     $result = $num1+$num2;
     $operation = "plus";
-else if($method=="POST"){
+} else if($method=="POST"){
     $result = $num1-$num2;
     $operation = "minus";
 } else if($method=="PUT"){
@@ -40,7 +40,8 @@ else if($method=="POST"){
     $operation = "obelus";
 }    
 
-//mostrar el reultat del càlcul
+//mostrar el resultat del càlcul en format json
+header('Content-Type: application/json');
 echo json_encode(
 	array("method"=>"$method",
 	      "operation"=>"$operation",

@@ -14,32 +14,33 @@ $num2=0;
 $result=0;
 $operation="";
 
+//llegir els valors de num1 i num2
 if($method=='GET'){
     $num1 = $_GET['num1'];
     $num2 = $_GET['num2'];
-    $result = $num1+$num2;
-    $operation = "plus";
 
-} else {
+} else { //method=='POST' || method=='PUT' || method=='DELETE'
     $data=getArrayContent();
     $num1=$data['num1'];
-    $num2=$data['num2'];   
-    
-    if($method=="POST"){
-        $result = $num1-$num2;
-        $operation = "minus";
-    } else if($method=="PUT"){
-        $result = $num1*$num2;
-        $operation = "times";
-    
-    } else if($method=="DELETE"){
-        $result = $num1/$num2;
-        $operation = "obelus";
-    }    
+    $num2=$data['num2'];     
 }
 
+//realitzar el càlcul en funció del mètode
+if($method=="GET"){
+    $result = $num1+$num2;
+    $operation = "plus";
+else if($method=="POST"){
+    $result = $num1-$num2;
+    $operation = "minus";
+} else if($method=="PUT"){
+    $result = $num1*$num2;
+    $operation = "times";
+} else if($method=="DELETE"){
+    $result = $num1/$num2;
+    $operation = "obelus";
+}    
 
-
+//mostrar el reultat del càlcul
 echo json_encode(
 	array("method"=>"$method",
 	      "operation"=>"$operation",

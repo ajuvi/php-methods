@@ -1,4 +1,4 @@
-# rest-calculator
+# rest-calculadora-php
 
 Exemple d'un servidor i d'un client REST per a realitzar càlculs matemàtics.
 * El servidor REST és l'script rest.php.
